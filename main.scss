@@ -1,0 +1,348 @@
+
+
+body{
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.intro{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: yellow;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__text{
+        width: 60%;
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    &__btn,
+    &__btn:link,
+    &__btn:active{
+        margin: 10vh;
+        margin-top: 5vh;
+        padding: 15px;
+        width: 15%;
+        border-radius: 10px;
+        text-decoration: none;
+        color: black;
+        background-color: yellow;
+        text-align: center;
+    }
+}
+
+
+.game{
+    height: 100vh;
+    width: 100vw;
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+}
+
+.player{
+    display: flex;
+    height: 37vh;
+
+    &__deck{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &--2{
+            order: 3;
+        }
+    }
+
+    &__hand{
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+
+        &__army{
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            &--2{
+                order: 1;
+            }
+        }
+
+        &__sorcery{
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            &--2{
+                order: 2;
+            }
+
+            @media screen and (max-width:400px) {
+                flex-wrap: wrap;
+            }
+        }
+
+        &--2{
+            order: 2;
+        }
+    }
+
+    &__status{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        &__profile{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        &__life{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &--2{
+            order: 1;
+        }
+    }
+}
+
+
+.card{
+    width: 100px;
+    height: 125px;
+    margin: 5px;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid black;
+
+    @media screen and (max-width:1100px) {
+        width: 90px;
+        height: 115px;
+    }
+
+    @media screen and (max-width:800px) {
+        width: 80px;
+        height: 100px;
+    }
+
+    @media screen and (max-width:650px) {
+        width: 70px;
+        height: 88px;
+    }
+
+    @media screen and (max-width:600px) {
+        width: 60px;
+        height: 75px;
+    }
+
+    @media screen and (max-width:500px) {
+        width: 50px;
+        height: 63px;
+    }
+
+    @media screen and (max-width:830px) and (orientation:landscape) {
+        width: 50px;
+        height: 63px;
+    }
+
+    @media screen and (max-width:650px) and (orientation:landscape) {
+        width: 40px;
+        height: 50px;
+    }
+
+
+    &__deck{
+        background-color: darkblue;
+        
+    }
+
+    &__magic{
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width:800px) {
+            font-size: 8px;
+        }
+    
+        @media screen and (max-width:500px) {
+            font-size: 6px;
+        }
+
+        @media screen and (max-width:830px) and (orientation:landscape) {
+            font-size: 5px;
+        }
+    
+        @media screen and (max-width:650px) and (orientation:landscape) {
+            font-size: 5px;
+        }
+
+        &__name{
+            flex:1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        &__effect{
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+        }
+
+    }
+
+    &__soldier{
+        font-size: 10px;
+        justify-content: space-between;
+        margin: 2px;
+    
+        @media screen and (max-width:800px) {
+            font-size: 8px;
+        }
+    
+        @media screen and (max-width:650px) {
+            font-size: 7px;
+        }
+    
+        @media screen and (max-width:600px) {
+            font-size: 6px;
+        }
+    
+        @media screen and (max-width:500px) {
+            font-size: 5px;
+        }
+
+        @media screen and (max-width:830px) and (orientation:landscape) {
+            font-size: 5px;
+        }
+    
+        @media screen and (max-width:650px) and (orientation:landscape) {
+            font-size: 5px;
+        }
+
+        &__photo{
+            height: 60%;
+        }
+
+        &__data{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__name{
+            text-transform: uppercase;
+            text-align: center;
+            flex-basis: 100%;
+            margin-bottom: 2px;
+            font-weight: 600;
+        }
+
+        &__atr{
+            flex-basis: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            li{
+                list-style: none;
+                flex-basis: 45%;
+            }
+
+        }
+
+    }
+
+  
+}
+
+.profile-img{
+    background-color: white;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+
+    @media screen and (max-width:1100px) {
+        height: 80px;
+        width: 80px;
+    }
+
+    @media screen and (max-width:850px) {
+        height: 65px;
+        width: 65px;
+    }
+
+    @media screen and (max-width:650px) {
+        height: 50px;
+        width: 50px;
+    }
+
+    @media screen and (max-width:450px) {
+        height: 40px;
+        width: 40px;
+    }
+/////////////////////////////////////////////
+/////////////////////////////////////
+//IMAGES JUST FOR TESTING PURPOSES
+/////////////////////////////////////
+///////////////////////////////////////
+    &--1{
+        background-image: url(img/Ilmo.png);
+        background-size: cover;
+    }
+
+    &--2{
+        background-image: url(img/Djulian.png);
+        background-size: cover;
+    }
+
+}
+
+.life-bar{
+    background-color: white;
+    height: 30px;
+    width: 85%;
+    border-radius: 5px;
+
+    @media screen and (max-width:600px) {
+        height: 25px;
+    }
+}
+
+
+.battlefield{
+    height: 26vh;
+}
+
+
+

@@ -1,0 +1,241 @@
+body {
+  box-sizing: border-box; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0; }
+
+.intro {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; }
+  .intro__text {
+    width: 60%;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center; }
+  .intro__btn, .intro__btn:link, .intro__btn:active {
+    margin: 10vh;
+    margin-top: 5vh;
+    padding: 15px;
+    width: 15%;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    background-color: yellow;
+    text-align: center; }
+
+.game {
+  height: 100vh;
+  width: 100vw;
+  background-color: lightgrey;
+  display: flex;
+  flex-direction: column; }
+
+.player {
+  display: flex;
+  height: 37vh; }
+  .player__deck {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .player__deck--2 {
+      order: 3; }
+  .player__hand {
+    flex: 3;
+    display: flex;
+    flex-direction: column; }
+    .player__hand__army {
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center; }
+      .player__hand__army--2 {
+        order: 1; }
+    .player__hand__sorcery {
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center; }
+      .player__hand__sorcery--2 {
+        order: 2; }
+      @media screen and (max-width: 400px) {
+        .player__hand__sorcery {
+          flex-wrap: wrap; } }
+    .player__hand--2 {
+      order: 2; }
+  .player__status {
+    flex: 1;
+    display: flex;
+    flex-direction: column; }
+    .player__status__profile {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end; }
+    .player__status__life {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .player__status--2 {
+      order: 1; }
+
+.card {
+  width: 100px;
+  height: 125px;
+  margin: 5px;
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid black; }
+  @media screen and (max-width: 1100px) {
+    .card {
+      width: 90px;
+      height: 115px; } }
+  @media screen and (max-width: 800px) {
+    .card {
+      width: 80px;
+      height: 100px; } }
+  @media screen and (max-width: 650px) {
+    .card {
+      width: 70px;
+      height: 88px; } }
+  @media screen and (max-width: 600px) {
+    .card {
+      width: 60px;
+      height: 75px; } }
+  @media screen and (max-width: 500px) {
+    .card {
+      width: 50px;
+      height: 63px; } }
+  @media screen and (max-width: 830px) and (orientation: landscape) {
+    .card {
+      width: 50px;
+      height: 63px; } }
+  @media screen and (max-width: 650px) and (orientation: landscape) {
+    .card {
+      width: 40px;
+      height: 50px; } }
+  .card__deck {
+    background-color: darkblue; }
+  .card__magic {
+    display: flex;
+    flex-direction: column; }
+    @media screen and (max-width: 800px) {
+      .card__magic {
+        font-size: 8px; } }
+    @media screen and (max-width: 500px) {
+      .card__magic {
+        font-size: 6px; } }
+    @media screen and (max-width: 830px) and (orientation: landscape) {
+      .card__magic {
+        font-size: 5px; } }
+    @media screen and (max-width: 650px) and (orientation: landscape) {
+      .card__magic {
+        font-size: 5px; } }
+    .card__magic__name {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 600; }
+    .card__magic__effect {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px; }
+  .card__soldier {
+    font-size: 10px;
+    justify-content: space-between;
+    margin: 2px; }
+    @media screen and (max-width: 800px) {
+      .card__soldier {
+        font-size: 8px; } }
+    @media screen and (max-width: 650px) {
+      .card__soldier {
+        font-size: 7px; } }
+    @media screen and (max-width: 600px) {
+      .card__soldier {
+        font-size: 6px; } }
+    @media screen and (max-width: 500px) {
+      .card__soldier {
+        font-size: 5px; } }
+    @media screen and (max-width: 830px) and (orientation: landscape) {
+      .card__soldier {
+        font-size: 5px; } }
+    @media screen and (max-width: 650px) and (orientation: landscape) {
+      .card__soldier {
+        font-size: 5px; } }
+    .card__soldier__photo {
+      height: 60%; }
+    .card__soldier__data {
+      display: flex;
+      flex-wrap: wrap; }
+    .card__soldier__name {
+      text-transform: uppercase;
+      text-align: center;
+      flex-basis: 100%;
+      margin-bottom: 2px;
+      font-weight: 600; }
+    .card__soldier__atr {
+      flex-basis: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; }
+      .card__soldier__atr li {
+        list-style: none;
+        flex-basis: 45%; }
+
+.profile-img {
+  background-color: white;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%; }
+  @media screen and (max-width: 1100px) {
+    .profile-img {
+      height: 80px;
+      width: 80px; } }
+  @media screen and (max-width: 850px) {
+    .profile-img {
+      height: 65px;
+      width: 65px; } }
+  @media screen and (max-width: 650px) {
+    .profile-img {
+      height: 50px;
+      width: 50px; } }
+  @media screen and (max-width: 450px) {
+    .profile-img {
+      height: 40px;
+      width: 40px; } }
+  .profile-img--1 {
+    background-image: url(Ilmo.png);
+    background-size: cover; }
+  .profile-img--2 {
+    background-image: url(Djulian.png);
+    background-size: cover; }
+
+.life-bar {
+  background-color: white;
+  height: 30px;
+  width: 85%;
+  border-radius: 5px; }
+  @media screen and (max-width: 600px) {
+    .life-bar {
+      height: 25px; } }
+
+.battlefield {
+  height: 26vh; }
