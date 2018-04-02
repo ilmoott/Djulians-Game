@@ -49,7 +49,8 @@ body{
 .game{
     height: 100vh;
     width: 100vw;
-    background-color: lightgrey;
+    background-image: url(img/grey_wpp.jpg);
+    background-size: cover;
     display: flex;
     flex-direction: column;
 }
@@ -90,6 +91,7 @@ body{
             display: flex;
             justify-content: space-around;
             align-items: center;
+            
 
             &--2{
                 order: 2;
@@ -114,16 +116,31 @@ body{
             width: 100%;
             height: 100%;
             display: flex;
-            justify-content: center;
-            align-items: flex-end;
+            flex-direction: column;
+            align-items: center;
+
+            &--1{
+                margin-top: 15%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+
+            &--2{
+                margin-bottom: 15%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
         }
 
         &__life{
             width: 100%;
             height: 100%;
+            margin-top: 5px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
         }
 
         &--2{
@@ -139,7 +156,9 @@ body{
     margin: 5px;
     background-color: white;
     border-radius: 3px;
-    border: 1px solid black;
+    box-shadow: 0 5px 5px rgba(black,.1);
+    transition: all .2s;
+    overflow: hidden;
 
     @media screen and (max-width:1100px) {
         width: 90px;
@@ -187,7 +206,7 @@ body{
         flex-direction: column;
 
         @media screen and (max-width:800px) {
-            font-size: 8px;
+            font-size: 6px;
         }
     
         @media screen and (max-width:500px) {
@@ -208,8 +227,9 @@ body{
             justify-content: center;
             align-items: center;
             text-transform: uppercase;
-            font-size: 10px;
+            font-size: 7px;
             font-weight: 600;
+            background-color: rgba(lightgrey,.5);
         }
 
         &__effect{
@@ -217,13 +237,15 @@ body{
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 10px;
+            font-size: 7px;
+            border-top: 1px solid lightgray;
+            background-color: rgba(lightblue,.2);
         }
 
     }
 
     &__soldier{
-        font-size: 10px;
+        font-size: 9px;
         justify-content: space-between;
         margin: 2px;
     
@@ -253,6 +275,11 @@ body{
 
         &__photo{
             height: 60%;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
         }
 
         &__data{
@@ -264,8 +291,8 @@ body{
             text-transform: uppercase;
             text-align: center;
             flex-basis: 100%;
-            margin-bottom: 2px;
             font-weight: 600;
+            margin-bottom: 1.5px;
         }
 
         &__atr{
@@ -273,6 +300,7 @@ body{
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            margin: 1.5px;
 
             li{
                 list-style: none;
@@ -283,28 +311,33 @@ body{
 
     }
 
+    &:hover{
+        transform: translateY(-5px) scale(1.5);
+        z-index: 10;
+    }
+
   
 }
 
 .profile-img{
     background-color: white;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 100%;
 
     @media screen and (max-width:1100px) {
-        height: 80px;
-        width: 80px;
+        height: 55px;
+        width: 55px;
     }
 
     @media screen and (max-width:850px) {
-        height: 65px;
-        width: 65px;
+        height: 50px;
+        width: 50px;
     }
 
     @media screen and (max-width:650px) {
-        height: 50px;
-        width: 50px;
+        height: 45px;
+        width: 45px;
     }
 
     @media screen and (max-width:450px) {
@@ -330,12 +363,21 @@ body{
 
 .life-bar{
     background-color: white;
-    height: 30px;
-    width: 85%;
+    margin-top: 15px;
+    height: 10%;
+    width: 35%;
     border-radius: 5px;
+    background-color: lightgreen;
+
+    box-shadow: 0 5px 5px rgba(black,0.1);
 
     @media screen and (max-width:600px) {
         height: 25px;
+        width: 85%;
+    }
+
+    @media screen and (max-width:830px) and (orientation:landscape) {
+        width: 60%;
     }
 }
 

@@ -183,23 +183,77 @@ console.log(list.pop());
 //Largest palindrome product
 
 
-var num;
+// var num;
 
+// var numList = [];
+// var temp =0;
+// for (var i=999;i>0;i--){
+//     for (var x=999;x>0;x--){
+//         num = x*i;
+//         var numStr = String(num);
+//         var revNum = numStr.split("").reverse().join("");
+//         if (numStr === revNum && numStr.length>4 && num>temp){
+//             temp = num;
+//         }
+//     }
+// }
 
-var numList = [];
-var temp =0;
-for (var i=999;i>0;i--){
-    for (var x=999;x>0;x--){
-        num = x*i;
-        var numStr = String(num);
-        var revNum = numStr.split("").reverse().join("");
-        if (numStr === revNum && numStr.length>4 && num>temp){
-            temp = num;
-        }
-    }
-}
-
-console.log(temp);
+// console.log(temp);
 
 //Smallest multiple
+
+// function multiTest(num){
+//     var count = 0;
+//     for (var i=2;i<=20;i++){
+//         if(num%i===0){
+//             count +=1;
+//         }
+//     }
+//     if (count===19){
+//         return true;
+//     }
+//     else{
+//         return false;
+//     }
+// }
+
+// var test = 20;
+
+// while (multiTest(test)!==true){
+//     test+=20;
+// }
+
+// console.log(test);
+
+
+//Sum square difference
+// var first = 0;
+// for (var y=1;y<=100;y++){
+//     first += y*y;
+// }
+// console.log(first);
+
+// var second = 0, secondSquare = 0;
+// for (var x=1;x<=100;x++){
+//     second += x;
+// }
+
+// secondSquare = second*second;
+
+// console.log(secondSquare-first);
+
+
+//eloquent js - objects
+
+
+function addEntry(events, didITurnIntoASquirrel){
+    journal.push({
+        events: events,
+        squirrel: didITurnIntoASquirrel
+    });
+}
+
+var journal = [{coco:1,bosta:2,titica:3}];
+
+console.log(journal.length);
 
