@@ -11,8 +11,10 @@ body {
 .intro {
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-image: url(img/welcoming.png);
+  background-size: cover;
   color: yellow;
+  font-family: 'Press Start 2P', cursive;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,28 +24,70 @@ body {
     font-size: 20px;
     line-height: 1.5;
     text-align: center; }
+    @media screen and (max-width: 600px) {
+      .intro__text {
+        width: 60%;
+        font-size: 15px; } }
+    @media screen and (max-width: 500px) {
+      .intro__text {
+        width: 60%; } }
+    @media screen and (max-width: 400px) {
+      .intro__text {
+        width: 60%;
+        font-size: 12px; } }
+    @media screen and (max-width: 830px) and (orientation: landscape) {
+      .intro__text {
+        width: 60%;
+        font-size: 12px; } }
+    @media screen and (max-width: 650px) and (orientation: landscape) {
+      .intro__text {
+        width: 40px;
+        font-size: 20px; } }
   .intro__btn, .intro__btn:link, .intro__btn:active {
     margin: 10vh;
     margin-top: 5vh;
     padding: 15px;
     width: 15%;
+    min-width: 50px;
     border-radius: 10px;
     text-decoration: none;
     color: black;
     background-color: yellow;
     text-align: center; }
+    @media screen and (max-width: 1100px) {
+      .intro__btn, .intro__btn:link, .intro__btn:active {
+        width: 20%; } }
+    @media screen and (max-width: 600px) {
+      .intro__btn, .intro__btn:link, .intro__btn:active {
+        width: 25%; } }
+    @media screen and (max-width: 500px) {
+      .intro__btn, .intro__btn:link, .intro__btn:active {
+        width: 30%; } }
+    @media screen and (max-width: 400px) {
+      .intro__btn, .intro__btn:link, .intro__btn:active {
+        width: 45%; } }
+    @media screen and (max-width: 830px) and (orientation: landscape) {
+      .intro__btn, .intro__btn:link, .intro__btn:active {
+        width: 30%;
+        font-size: 12px; } }
+    @media screen and (max-width: 650px) and (orientation: landscape) {
+      .intro__btn, .intro__btn:link, .intro__btn:active {
+        width: 40px;
+        height: 58px; } }
 
 .game {
   height: 100vh;
   width: 100vw;
   background-image: url(img/grey_wpp.jpg);
+  background-blend-mode: lighten;
   background-size: cover;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif; }
 
 .player {
   display: flex;
-  height: 37vh; }
+  height: 40vh; }
   .player__deck {
     flex: 1;
     display: flex;
@@ -103,49 +147,77 @@ body {
       align-items: flex-start; }
     .player__status--2 {
       order: 1; }
+  .player__name {
+    margin-top: 5px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center; }
+    @media screen and (max-width: 1100px) {
+      .player__name {
+        font-size: 11px; } }
+    @media screen and (max-width: 800px) {
+      .player__name {
+        font-size: 10px; } }
+    @media screen and (max-width: 650px) {
+      .player__name {
+        font-size: 9px; } }
+    @media screen and (max-width: 600px) {
+      .player__name {
+        font-size: 8px; } }
 
 .card {
   width: 100px;
-  height: 125px;
+  height: 140px;
   margin: 5px;
   background-color: white;
   border-radius: 3px;
+  border: 3px solid #2c2d2d;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  outline-offset: 3px;
   transition: all .2s;
   overflow: hidden; }
   @media screen and (max-width: 1100px) {
     .card {
       width: 90px;
-      height: 115px; } }
+      height: 126px; } }
   @media screen and (max-width: 800px) {
     .card {
       width: 80px;
-      height: 100px; } }
+      height: 112px; } }
   @media screen and (max-width: 650px) {
     .card {
       width: 70px;
-      height: 88px; } }
+      height: 100px;
+      border: 2px solid #2c2d2d; } }
   @media screen and (max-width: 600px) {
     .card {
       width: 60px;
-      height: 75px; } }
+      height: 86px; } }
   @media screen and (max-width: 500px) {
     .card {
       width: 50px;
-      height: 63px; } }
+      height: 72px; } }
   @media screen and (max-width: 830px) and (orientation: landscape) {
     .card {
       width: 50px;
-      height: 63px; } }
+      height: 72px;
+      border: 2px solid #2c2d2d; }
+      .card:hover {
+        outline: 2px solid #343535; } }
   @media screen and (max-width: 650px) and (orientation: landscape) {
     .card {
       width: 40px;
-      height: 50px; } }
+      height: 58px; } }
   .card__deck {
-    background-color: darkblue; }
+    background-image: url(img/card.jpg);
+    background-size: cover; }
   .card__magic {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    background-color: #344666;
+    color: lightgray; }
     @media screen and (max-width: 800px) {
       .card__magic {
         font-size: 6px; } }
@@ -165,23 +237,22 @@ body {
       align-items: center;
       text-transform: uppercase;
       font-size: 7px;
-      font-weight: 600;
-      background-color: rgba(211, 211, 211, 0.5); }
+      font-weight: 600; }
     .card__magic__effect {
       flex: 2;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      font-size: 7px;
-      border-top: 1px solid lightgray;
-      background-color: rgba(173, 216, 230, 0.2); }
+      font-size: 7px; }
   .card__soldier {
-    font-size: 9px;
+    font-size: 7px;
     justify-content: space-between;
-    margin: 2px; }
+    background-color: #c44e36;
+    z-index: 5; }
     @media screen and (max-width: 800px) {
       .card__soldier {
-        font-size: 8px; } }
+        font-size: 7px; } }
     @media screen and (max-width: 650px) {
       .card__soldier {
         font-size: 7px; } }
@@ -190,15 +261,17 @@ body {
         font-size: 6px; } }
     @media screen and (max-width: 500px) {
       .card__soldier {
-        font-size: 5px; } }
+        font-size: 4px; } }
     @media screen and (max-width: 830px) and (orientation: landscape) {
       .card__soldier {
-        font-size: 5px; } }
+        font-size: 4px; } }
     @media screen and (max-width: 650px) and (orientation: landscape) {
       .card__soldier {
-        font-size: 5px; } }
+        font-size: 4px; } }
     .card__soldier__photo {
-      height: 60%; }
+      height: 60%;
+      padding: 2px;
+      border-radius: 3px; }
       .card__soldier__photo img {
         width: 100%;
         height: 100%; }
@@ -209,20 +282,28 @@ body {
       text-transform: uppercase;
       text-align: center;
       flex-basis: 100%;
-      font-weight: 600;
-      margin-bottom: 1.5px; }
+      font-weight: 700; }
     .card__soldier__atr {
       flex-basis: 100%;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      margin: 1.5px; }
+      margin: 1px; }
       .card__soldier__atr li {
         list-style: none;
-        flex-basis: 45%; }
+        flex-basis: 45%;
+        background-color: #e09f91;
+        border-radius: 2px;
+        margin: 1px;
+        padding-left: 1px;
+        padding-right: 2px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; }
   .card:hover {
     transform: translateY(-5px) scale(1.5);
-    z-index: 10; }
+    z-index: 10;
+    outline: 3px solid #343535; }
 
 .profile-img {
   background-color: white;
@@ -235,16 +316,16 @@ body {
       width: 55px; } }
   @media screen and (max-width: 850px) {
     .profile-img {
-      height: 50px;
-      width: 50px; } }
-  @media screen and (max-width: 650px) {
-    .profile-img {
       height: 45px;
       width: 45px; } }
+  @media screen and (max-width: 650px) {
+    .profile-img {
+      height: 41px;
+      width: 41px; } }
   @media screen and (max-width: 450px) {
     .profile-img {
-      height: 40px;
-      width: 40px; } }
+      height: 36px;
+      width: 36px; } }
   .profile-img--1 {
     background-image: url(img/Ilmo.png);
     background-size: cover; }
@@ -255,18 +336,17 @@ body {
 .life-bar {
   background-color: white;
   margin-top: 15px;
-  height: 10%;
+  height: 10px;
   width: 35%;
   border-radius: 5px;
-  background-color: lightgreen;
+  background-color: lightseagreen;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); }
   @media screen and (max-width: 600px) {
     .life-bar {
-      height: 25px;
-      width: 85%; } }
+      width: 50%; } }
   @media screen and (max-width: 830px) and (orientation: landscape) {
     .life-bar {
-      width: 60%; } }
+      width: 50%; } }
 
 .battlefield {
-  height: 26vh; }
+  height: 20vh; }

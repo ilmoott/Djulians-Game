@@ -253,7 +253,9 @@ function addEntry(events, didITurnIntoASquirrel){
     });
 }
 
-var journal = [{coco:1,bosta:2,titica:3}];
+var journal = [{coco:{mijo:4,urina:5},bosta:2,titica:3}];
 
 console.log(journal.length);
+
+console.log(typeof journal);
 

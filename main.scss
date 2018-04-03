@@ -15,8 +15,10 @@ body{
 .intro{
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    background-image: url(img/welcoming.png);
+    background-size: cover;
     color: yellow;
+    font-family: 'Press Start 2P', cursive;
 
     display: flex;
     flex-direction: column;
@@ -28,6 +30,30 @@ body{
         font-size: 20px;
         line-height: 1.5;
         text-align: center;
+
+        @media screen and (max-width:600px) {
+            width: 60%;
+            font-size: 15px;
+        }
+    
+        @media screen and (max-width:500px) {
+            width: 60%;
+        }
+
+        @media screen and (max-width:400px) {
+            width: 60%;
+            font-size: 12px;
+        }
+    
+        @media screen and (max-width:830px) and (orientation:landscape) {
+            width: 60%;
+            font-size: 12px;
+        }
+    
+        @media screen and (max-width:650px) and (orientation:landscape) {
+            width: 40px;
+            font-size: 20px;
+        }
     }
 
     &__btn,
@@ -37,11 +63,39 @@ body{
         margin-top: 5vh;
         padding: 15px;
         width: 15%;
+        min-width: 50px;
         border-radius: 10px;
         text-decoration: none;
         color: black;
         background-color: yellow;
         text-align: center;
+
+        @media screen and (max-width:1100px) {
+            width: 20%;
+        }
+    
+        @media screen and (max-width:600px) {
+            width: 25%;
+        }
+    
+        @media screen and (max-width:500px) {
+            width: 30%;
+        }
+
+        @media screen and (max-width:400px) {
+            width: 45%;
+        }
+    
+        @media screen and (max-width:830px) and (orientation:landscape) {
+            width: 30%;
+            font-size: 12px;
+        }
+    
+        @media screen and (max-width:650px) and (orientation:landscape) {
+            width: 40px;
+            height: 58px;
+        }
+    
     }
 }
 
@@ -50,14 +104,16 @@ body{
     height: 100vh;
     width: 100vw;
     background-image: url(img/grey_wpp.jpg);
+    background-blend-mode: lighten;
     background-size: cover;
     display: flex;
     flex-direction: column;
+    font-family: 'Raleway', sans-serif;
 }
 
 .player{
     display: flex;
-    height: 37vh;
+    height: 40vh;
 
     &__deck{
         flex: 1;
@@ -147,63 +203,101 @@ body{
             order: 1;
         }
     }
+
+    &__name{
+        margin-top: 5px;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 12px;
+        text-align: center;
+
+        @media screen and (max-width:1100px) {
+            font-size: 11px;
+        }
+    
+        @media screen and (max-width:800px) {
+            font-size: 10px;
+        }
+    
+        @media screen and (max-width:650px) {
+            font-size: 9px;
+        }
+    
+        @media screen and (max-width:600px) {
+            font-size: 8px;
+        }
+            
+    }
 }
 
 
 .card{
     width: 100px;
-    height: 125px;
+    height: 140px;
     margin: 5px;
     background-color: white;
     border-radius: 3px;
+    border: 3px solid #2c2d2d;
     box-shadow: 0 5px 5px rgba(black,.1);
+    outline-offset: 3px;
     transition: all .2s;
     overflow: hidden;
+    
 
     @media screen and (max-width:1100px) {
         width: 90px;
-        height: 115px;
+        height: 126px;
     }
 
     @media screen and (max-width:800px) {
         width: 80px;
-        height: 100px;
+        height: 112px;
     }
 
     @media screen and (max-width:650px) {
         width: 70px;
-        height: 88px;
+        height: 100px;
+        border: 2px solid #2c2d2d;
     }
 
     @media screen and (max-width:600px) {
         width: 60px;
-        height: 75px;
+        height: 86px;
     }
 
     @media screen and (max-width:500px) {
         width: 50px;
-        height: 63px;
+        height: 72px;
     }
 
     @media screen and (max-width:830px) and (orientation:landscape) {
         width: 50px;
-        height: 63px;
+        height: 72px;
+        border: 2px solid #2c2d2d;
+
+        &:hover{
+            outline: 2px solid #343535;
+        }
     }
 
     @media screen and (max-width:650px) and (orientation:landscape) {
         width: 40px;
-        height: 50px;
+        height: 58px;
     }
 
 
     &__deck{
-        background-color: darkblue;
+        background-image: url(img/card.jpg);
+        background-size: cover;
         
     }
 
     &__magic{
         display: flex;
         flex-direction: column;
+        background-color: #344666;
+        color: lightgray;
 
         @media screen and (max-width:800px) {
             font-size: 6px;
@@ -229,28 +323,27 @@ body{
             text-transform: uppercase;
             font-size: 7px;
             font-weight: 600;
-            background-color: rgba(lightgrey,.5);
         }
 
         &__effect{
             flex: 2;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             font-size: 7px;
-            border-top: 1px solid lightgray;
-            background-color: rgba(lightblue,.2);
         }
 
     }
 
     &__soldier{
-        font-size: 9px;
+        font-size: 7px;
         justify-content: space-between;
-        margin: 2px;
+        background-color:#c44e36;
+        z-index: 5;
     
         @media screen and (max-width:800px) {
-            font-size: 8px;
+            font-size: 7px;
         }
     
         @media screen and (max-width:650px) {
@@ -262,19 +355,21 @@ body{
         }
     
         @media screen and (max-width:500px) {
-            font-size: 5px;
+            font-size: 4px;
         }
 
         @media screen and (max-width:830px) and (orientation:landscape) {
-            font-size: 5px;
+            font-size: 4px;
         }
     
         @media screen and (max-width:650px) and (orientation:landscape) {
-            font-size: 5px;
+            font-size: 4px;
         }
 
         &__photo{
             height: 60%;
+            padding: 2px;
+            border-radius: 3px;
 
             img{
                 width: 100%;
@@ -291,8 +386,7 @@ body{
             text-transform: uppercase;
             text-align: center;
             flex-basis: 100%;
-            font-weight: 600;
-            margin-bottom: 1.5px;
+            font-weight: 700;
         }
 
         &__atr{
@@ -300,11 +394,21 @@ body{
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            margin: 1.5px;
+            margin: 1px;
+
 
             li{
                 list-style: none;
                 flex-basis: 45%;
+                background-color: #e09f91;
+                border-radius: 2px;
+                margin: 1px;
+                padding-left: 1px;
+                padding-right: 2px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
             }
 
         }
@@ -314,6 +418,7 @@ body{
     &:hover{
         transform: translateY(-5px) scale(1.5);
         z-index: 10;
+        outline: 3px solid #343535;
     }
 
   
@@ -331,18 +436,18 @@ body{
     }
 
     @media screen and (max-width:850px) {
-        height: 50px;
-        width: 50px;
-    }
-
-    @media screen and (max-width:650px) {
         height: 45px;
         width: 45px;
     }
 
+    @media screen and (max-width:650px) {
+        height: 41px;
+        width: 41px;
+    }
+
     @media screen and (max-width:450px) {
-        height: 40px;
-        width: 40px;
+        height: 36px;
+        width: 36px;
     }
 /////////////////////////////////////////////
 /////////////////////////////////////
@@ -364,26 +469,25 @@ body{
 .life-bar{
     background-color: white;
     margin-top: 15px;
-    height: 10%;
+    height: 10px;
     width: 35%;
     border-radius: 5px;
-    background-color: lightgreen;
+    background-color: lightseagreen;
 
     box-shadow: 0 5px 5px rgba(black,0.1);
 
     @media screen and (max-width:600px) {
-        height: 25px;
-        width: 85%;
+        width: 50%;
     }
 
     @media screen and (max-width:830px) and (orientation:landscape) {
-        width: 60%;
+        width: 50%;
     }
 }
 
 
 .battlefield{
-    height: 26vh;
+    height: 20vh;
 }
 
 
