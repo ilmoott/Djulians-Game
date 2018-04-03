@@ -106,6 +106,9 @@ body {
       align-items: center; }
       .player__hand__army--2 {
         order: 1; }
+      @media screen and (max-width: 400px) {
+        .player__hand__army {
+          height: 80%; } }
     .player__hand__sorcery {
       height: 100%;
       display: flex;
@@ -115,7 +118,10 @@ body {
         order: 2; }
       @media screen and (max-width: 400px) {
         .player__hand__sorcery {
-          flex-wrap: wrap; } }
+          flex-wrap: wrap; }
+          .player__hand__sorcery .card {
+            width: 40px;
+            height: 60px; } }
     .player__hand--2 {
       order: 2; }
   .player__status {
@@ -173,8 +179,8 @@ body {
   margin: 5px;
   background-color: white;
   border-radius: 3px;
-  border: 3px solid #2c2d2d;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  border: 3px outset #2c2d2d;
+  box-shadow: 0 7px 5px rgba(0, 0, 0, 0.4);
   outline-offset: 3px;
   transition: all .2s;
   overflow: hidden; }
@@ -205,7 +211,7 @@ body {
       height: 72px;
       border: 2px solid #2c2d2d; }
       .card:hover {
-        outline: 2px solid #343535; } }
+        outline: 2px groove #343535; } }
   @media screen and (max-width: 650px) and (orientation: landscape) {
     .card {
       width: 40px;
@@ -216,7 +222,7 @@ body {
   .card__magic {
     display: flex;
     flex-direction: column;
-    background-color: #344666;
+    background-image: linear-gradient(to bottom, #364a6b, #1e2838);
     color: lightgray; }
     @media screen and (max-width: 800px) {
       .card__magic {
@@ -248,7 +254,7 @@ body {
   .card__soldier {
     font-size: 7px;
     justify-content: space-between;
-    background-color: #c44e36;
+    background-image: linear-gradient(to bottom, #c44e36 70%, #a01313);
     z-index: 5; }
     @media screen and (max-width: 800px) {
       .card__soldier {
@@ -293,17 +299,26 @@ body {
         list-style: none;
         flex-basis: 45%;
         background-color: #e09f91;
-        border-radius: 2px;
+        border-radius: 1px;
         margin: 1px;
         padding-left: 1px;
         padding-right: 2px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between; }
+        .card__soldier__atr li:last-child {
+          display: flex;
+          justify-content: center;
+          background-color: #a8ef9b; }
   .card:hover {
-    transform: translateY(-5px) scale(1.5);
+    transform: translateY(70px) scale(1.6);
     z-index: 10;
-    outline: 3px solid #343535; }
+    outline: 3px groove #343535; }
+
+.player--2 .card:hover {
+  transform: translateY(-70px) scale(1.6);
+  z-index: 10;
+  outline: 3px groove #343535; }
 
 .profile-img {
   background-color: white;
@@ -350,3 +365,6 @@ body {
 
 .battlefield {
   height: 20vh; }
+  @media screen and (max-width: 400px) {
+    .battlefield {
+      height: 14vh; } }

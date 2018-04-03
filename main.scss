@@ -140,6 +140,11 @@ body{
             &--2{
                 order: 1;
             }
+
+            @media screen and (max-width:400px) {
+                height: 80%;
+            }
+            
         }
 
         &__sorcery{
@@ -155,7 +160,14 @@ body{
 
             @media screen and (max-width:400px) {
                 flex-wrap: wrap;
+
+                .card{
+                    width: 40px;
+                    height: 60px;
+                }
             }
+
+            
         }
 
         &--2{
@@ -167,6 +179,7 @@ body{
         flex: 1;
         display: flex;
         flex-direction: column;
+        
 
         &__profile{
             width: 100%;
@@ -238,8 +251,8 @@ body{
     margin: 5px;
     background-color: white;
     border-radius: 3px;
-    border: 3px solid #2c2d2d;
-    box-shadow: 0 5px 5px rgba(black,.1);
+    border: 3px outset #2c2d2d;
+    box-shadow: 0 7px 5px rgba(black,.4);
     outline-offset: 3px;
     transition: all .2s;
     overflow: hidden;
@@ -277,7 +290,7 @@ body{
         border: 2px solid #2c2d2d;
 
         &:hover{
-            outline: 2px solid #343535;
+            outline: 2px groove #343535;
         }
     }
 
@@ -296,7 +309,7 @@ body{
     &__magic{
         display: flex;
         flex-direction: column;
-        background-color: #344666;
+        background-image: linear-gradient(to bottom,#364a6b,#1e2838);
         color: lightgray;
 
         @media screen and (max-width:800px) {
@@ -339,7 +352,7 @@ body{
     &__soldier{
         font-size: 7px;
         justify-content: space-between;
-        background-color:#c44e36;
+        background-image: linear-gradient(to bottom,#c44e36 70%,#a01313);
         z-index: 5;
     
         @media screen and (max-width:800px) {
@@ -401,13 +414,19 @@ body{
                 list-style: none;
                 flex-basis: 45%;
                 background-color: #e09f91;
-                border-radius: 2px;
+                border-radius: 1px;
                 margin: 1px;
                 padding-left: 1px;
                 padding-right: 2px;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
+
+                &:last-child{
+                    display: flex;
+                    justify-content: center;
+                    background-color: #a8ef9b;
+                }
 
             }
 
@@ -416,12 +435,22 @@ body{
     }
 
     &:hover{
-        transform: translateY(-5px) scale(1.5);
+        transform: translateY(70px) scale(1.6);
         z-index: 10;
-        outline: 3px solid #343535;
+        outline: 3px groove #343535;
     }
+}
 
-  
+.player--2{
+
+    .card{
+
+        &:hover{
+            transform: translateY(-70px) scale(1.6);
+            z-index: 10;
+            outline: 3px groove #343535;
+        }
+    }
 }
 
 .profile-img{
@@ -488,7 +517,12 @@ body{
 
 .battlefield{
     height: 20vh;
+
+    @media screen and (max-width:400px) {
+        height: 14vh;
+    }
 }
+
 
 
 

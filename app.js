@@ -243,19 +243,85 @@ console.log(list.pop());
 // console.log(secondSquare-first);
 
 
+///////////////////////
 //eloquent js - objects
+/////////////////////////
+
+function range(start, end){
+    var list = [];
+
+    for (var y=start;y<=end;y++){
+        list.push(y);
+    }
+
+    return list;
+}
+console.log(range(0,10));
 
 
-function addEntry(events, didITurnIntoASquirrel){
-    journal.push({
-        events: events,
-        squirrel: didITurnIntoASquirrel
-    });
+function sume(arr){
+    var total = 0;
+
+    for (var x=0;x<arr.length;x++){
+        total+=arr[x];
+    }
+    return total;
+}
+console.log(sume(range(0,10)));
+
+function stepRange(start,end,step){
+    var list = [];
+    var step = step || 1;
+    if (start>=end){
+        for (var y=start;y>=end;y+=step){
+            list.push(y);
+        }
+    }
+    else{
+        for (var x=start;x<=end;x+=step){
+            list.push(y);
+        }
+    }
+    
+    return list;
 }
 
-var journal = [{coco:{mijo:4,urina:5},bosta:2,titica:3}];
+console.log(stepRange(10,-5,-2));
 
-console.log(journal.length);
 
-console.log(typeof journal);
+///////////////////////
+//REVERSING AN ARRAY
+/////////////////////
+
+var list = [1,2,3,4,5,6,7];
+
+function reverseArray(arr){
+    var list2 = [];
+    for (var i=arr.length-1;i>=0;i--){
+        list2.push(arr[i]);
+    }
+    return list2;
+}
+
+console.log(reverseArray(list));
+
+function reverseArrayInPlace(arr){
+    var list3 = [];
+    for (var i=arr.length-1;i>=0;i--){
+        item = arr.pop();
+        list3.push(item);
+    }
+
+    for (var x=0;x<=list3.length-1;x++){
+        arr[x] = list3[x];
+    }
+    return arr;
+}
+
+console.log(reverseArrayInPlace(list));
+
+
+////////////////////////////////
+//A LIST
+///////////////////////////////
 
