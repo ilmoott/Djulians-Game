@@ -18,7 +18,7 @@ body{
     background-image: url(img/welcoming.png);
     background-size: cover;
     color: yellow;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Raleway', sans-serif;
 
     display: flex;
     flex-direction: column;
@@ -69,6 +69,7 @@ body{
         color: black;
         background-color: yellow;
         text-align: center;
+        transition: all .2s;
 
         @media screen and (max-width:1100px) {
             width: 20%;
@@ -96,6 +97,9 @@ body{
             height: 58px;
         }
     
+        &:hover{
+            transform: scale(1.1);
+        }
     }
 }
 
@@ -179,6 +183,9 @@ body{
         flex: 1;
         display: flex;
         flex-direction: column;
+        border-radius: 50%;
+        background-position: center;
+        
         
 
         &__profile{
@@ -187,20 +194,21 @@ body{
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            position: relative;
+            // filter: drop-shadow(0px 20px 10px rgba(0,0,0,.9));
+            
 
             &--1{
-                margin-top: 15%;
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-start;
             }
 
             &--2{
-                margin-bottom: 15%;
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-end;
             }
+
         }
 
         &__life{
@@ -224,6 +232,7 @@ body{
         font-weight: 400;
         font-size: 12px;
         text-align: center;
+        z-index: 2;
 
         @media screen and (max-width:1100px) {
             font-size: 11px;
@@ -253,7 +262,7 @@ body{
     border-radius: 3px;
     border: 3px outset #2c2d2d;
     box-shadow: 0 7px 5px rgba(black,.4);
-    outline-offset: 3px;
+    outline-offset: 2px;
     transition: all .2s;
     overflow: hidden;
     
@@ -303,6 +312,7 @@ body{
     &__deck{
         background-image: url(img/card.jpg);
         background-size: cover;
+        background-position: center;
         
     }
 
@@ -428,6 +438,10 @@ body{
                     background-color: #a8ef9b;
                 }
 
+                &:hover{
+                    background-color: darken($color:#e09f91, $amount: 15%);
+                }
+
             }
 
         }
@@ -454,10 +468,10 @@ body{
 }
 
 .profile-img{
-    background-color: white;
     height: 60px;
     width: 60px;
     border-radius: 100%;
+    z-index: 2;
 
     @media screen and (max-width:1100px) {
         height: 55px;
@@ -478,6 +492,7 @@ body{
         height: 36px;
         width: 36px;
     }
+
 /////////////////////////////////////////////
 /////////////////////////////////////
 //IMAGES JUST FOR TESTING PURPOSES
@@ -502,7 +517,7 @@ body{
     width: 35%;
     border-radius: 5px;
     background-color: lightseagreen;
-
+    z-index: 2;
     box-shadow: 0 5px 5px rgba(black,0.1);
 
     @media screen and (max-width:600px) {

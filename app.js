@@ -1,327 +1,63 @@
+//////////////////
+//USER INTERFACE INTERACTION
 
 
-//pyramid problem
-var x = "";
-for (var i = 0;i <=6;i++){
-    x += "#";
-    console.log(x);  
+
+
+
+///////////////////
+//SOFTWARE MECHANICS
+
+//Maybe I could create a object factory function, to generate all heroes
+// without the need to type all properties each time
+let chapoliColorado = {
+    name: "Chapolin Colorado",
+    str: 2,
+    pwr: 1,
+    spd: 1,
+    end: 1
+};
+
+let naruto = {
+    name: "Naruto",
+    str: 4,
+    pwr: 5,
+    spd: 5,
+    end: 5
+};
+
+let ironMan = {
+    name: "Iron Man",
+    str: 3,
+    pwr: 4,
+    spd: 4,
+    end: 5
+};
+
+let blackPanter = {
+    name: "Black Panter",
+    str: 3,
+    pwr: 1,
+    spd: 3,
+    end: 4
+};
+
+let spiderMan = {
+    name: "Spider Man",
+    str: 4,
+    pwr: 3,
+    spd: 4,
+    end: 4
+};
+
+let heroCollection = [chapoliColorado,naruto,ironMan,blackPanter,spiderMan];
+
+// This function will print to the page the hero's name
+
+// //In this game, I'll split all the activities in small functions, making them
+// compose with each other (functional programming)
+let printName = (hero)=>{
+    return hero.name
 }
 
-//fizzbuzz problem
-for (var x = 1;x<=100;x++){
-    if (x%3==0 && x%5==0){
-        console.log('FizzBuzz');
-    }
-
-    else if(x%3 == 0){
-        console.log('Fizz');
-    }
-
-    else if(x%5 == 0){
-        console.log('Buzz');
-    }
-    else{
-        console.log(x);
-    }
-}
-
-//chess board loop
-var size = 8, board ="";
-
-for (var y = 0;y<size;y++){
-    for (var x=0; x<size;x++){
-        if(y%2==0 && x%2==0){
-            board += " ";
-        }
-        else if(y%2==0 && x%2!=0){
-            board += "#";
-        }
-        else if(y%2!=0 && x%2==0){
-            board += "#";
-        }
-        else{
-            board += " ";
-        }
-    }
-    board += "\n";
-}
-
-console.log(board);
-
-
-
-//simple min function
-function min(a,b){
-    if (a<b){
-        return a;
-    }
-    else if(b<a){
-        return b;
-    }
-    else{
-        return "they are even";
-    }
-}
-console.log(min(9,9));
-
-
-//recursive even checker function
-function oddEven(num){
-    if (num == 0){
-        return "even";
-    }
-    else if (num ==1){
-        return "odd";
-    }
-    else {
-        return oddEven(Math.abs(num)-2);
-    }
-}
-console.log(oddEven(-50));
-
-
-
-//Bean counting problem
-var word="boBoqueteBeBe";
-
-function countBs(input){
-    var count = 0;
-    for (var x=0;x<input.length;x++){
-        if (input[x]=='B'){
-            count+=1;
-        }
-    }
-    return count;
-}
-
-console.log(countBs(word));
-
-
-
-function countChar(phrase,letter){
-    var count = 0;
-    for (var x=0;x<phrase.length;x++){
-        if (phrase[x]==letter){
-            count+=1;
-        }
-    }
-    return count;
-}
-
-console.log(countChar("meu pau ta duro","a"));
-
-
-//Multiples of 3 and 5
-var listNum = [], total=0;
-for (var i=1;i<1000;i++){
-    if (i%3===0 && i%5===0){
-        listNum.push(i);
-    }
-    else if(i%3===0){
-        listNum.push(i);
-    }
-    else if(i%5===0){
-        listNum.push(i);
-    }
-}
-
-for (var i=0;i<listNum.length;i++){
-    total +=listNum[i];
-}
-
-console.log(total);
-
-
-//even fibonacci numbers
-var fibit = [];
-function fibo(a, b){
-    while (b<4000000){
-        fibit.push(a);
-        fibit.push(b);
-        a+=b;
-        b+=a;
-    }
-}
-fibo(0,1);
-var sum=0;
-for (var i=0;i<fibit.length;i++){
-    if(fibit[i]%2==0){
-        sum+=fibit[i];
-    }
-}
-
-console.log(sum);
-
-
-
-//Largest prime factor
-// with a very large number its almost impossible to make this calculation
-//so we use the square root of the number
-var preList = [];
-var list = [];
-for (var i=0;i<Math.sqrt(600851475143);i++){
-    if(600851475143%i===0){
-        preList.push(i);
-    }
-}
-
-for (var i = 0;i<preList.length;i++){
-    var count = [];
-    for (var x=0;x<preList[i];x++){
-        if (preList[i]%x===0){
-            count.push(x);
-        }
-    }
-    if (count.length<=2){
-        list.push(preList[i]);
-    }
-}
-
-console.log(list.pop());
-
-
-//Largest palindrome product
-
-
-// var num;
-
-// var numList = [];
-// var temp =0;
-// for (var i=999;i>0;i--){
-//     for (var x=999;x>0;x--){
-//         num = x*i;
-//         var numStr = String(num);
-//         var revNum = numStr.split("").reverse().join("");
-//         if (numStr === revNum && numStr.length>4 && num>temp){
-//             temp = num;
-//         }
-//     }
-// }
-
-// console.log(temp);
-
-//Smallest multiple
-
-// function multiTest(num){
-//     var count = 0;
-//     for (var i=2;i<=20;i++){
-//         if(num%i===0){
-//             count +=1;
-//         }
-//     }
-//     if (count===19){
-//         return true;
-//     }
-//     else{
-//         return false;
-//     }
-// }
-
-// var test = 20;
-
-// while (multiTest(test)!==true){
-//     test+=20;
-// }
-
-// console.log(test);
-
-
-//Sum square difference
-// var first = 0;
-// for (var y=1;y<=100;y++){
-//     first += y*y;
-// }
-// console.log(first);
-
-// var second = 0, secondSquare = 0;
-// for (var x=1;x<=100;x++){
-//     second += x;
-// }
-
-// secondSquare = second*second;
-
-// console.log(secondSquare-first);
-
-
-///////////////////////
-//eloquent js - objects
-/////////////////////////
-
-function range(start, end){
-    var list = [];
-
-    for (var y=start;y<=end;y++){
-        list.push(y);
-    }
-
-    return list;
-}
-console.log(range(0,10));
-
-
-function sume(arr){
-    var total = 0;
-
-    for (var x=0;x<arr.length;x++){
-        total+=arr[x];
-    }
-    return total;
-}
-console.log(sume(range(0,10)));
-
-function stepRange(start,end,step){
-    var list = [];
-    var step = step || 1;
-    if (start>=end){
-        for (var y=start;y>=end;y+=step){
-            list.push(y);
-        }
-    }
-    else{
-        for (var x=start;x<=end;x+=step){
-            list.push(y);
-        }
-    }
-    
-    return list;
-}
-
-console.log(stepRange(10,-5,-2));
-
-
-///////////////////////
-//REVERSING AN ARRAY
-/////////////////////
-
-var list = [1,2,3,4,5,6,7];
-
-function reverseArray(arr){
-    var list2 = [];
-    for (var i=arr.length-1;i>=0;i--){
-        list2.push(arr[i]);
-    }
-    return list2;
-}
-
-console.log(reverseArray(list));
-
-function reverseArrayInPlace(arr){
-    var list3 = [];
-    for (var i=arr.length-1;i>=0;i--){
-        item = arr.pop();
-        list3.push(item);
-    }
-
-    for (var x=0;x<=list3.length-1;x++){
-        arr[x] = list3[x];
-    }
-    return arr;
-}
-
-console.log(reverseArrayInPlace(list));
-
-
-////////////////////////////////
-//A LIST
-///////////////////////////////
-
+// var x =document.getElementsByClassName("card__soldier").addEventListener("click",function(){alert("Coco")});
