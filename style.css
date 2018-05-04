@@ -1,5 +1,6 @@
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  position: relative; }
 
 *,
 *::before,
@@ -14,14 +15,14 @@ body {
   background-image: url(img/welcoming.png);
   background-size: cover;
   color: yellow;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Poiret One', cursive;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end; }
   .intro__text {
     width: 60%;
-    font-size: 20px;
+    font-size: 20vw;
     line-height: 1.5;
     text-align: center; }
     @media screen and (max-width: 600px) {
@@ -43,6 +44,8 @@ body {
       .intro__text {
         width: 40px;
         font-size: 20px; } }
+    .intro__text--i {
+      transform: translateX(-40%); }
   .intro__btn, .intro__btn:link, .intro__btn:active {
     margin: 10vh;
     margin-top: 5vh;
@@ -54,7 +57,8 @@ body {
     color: black;
     background-color: yellow;
     text-align: center;
-    transition: all .2s; }
+    transition: all .2s;
+    animation: showUp ease-out 3s; }
     @media screen and (max-width: 1100px) {
       .intro__btn, .intro__btn:link, .intro__btn:active {
         width: 20%; } }
@@ -77,6 +81,22 @@ body {
         height: 58px; } }
     .intro__btn:hover, .intro__btn:link:hover, .intro__btn:active:hover {
       transform: scale(1.1); }
+
+@keyframes showUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes showDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
 
 .game {
   height: 100vh;
@@ -107,8 +127,6 @@ body {
       display: flex;
       justify-content: space-around;
       align-items: center; }
-      .player__hand__army--2 {
-        order: 1; }
       @media screen and (max-width: 400px) {
         .player__hand__army {
           height: 80%; } }
@@ -140,13 +158,20 @@ body {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      position: relative; }
+      position: relative;
+      background-image: url(img/path4918.png);
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: all .2s; }
       .player__status__profile--1 {
         display: flex;
         flex-direction: column; }
       .player__status__profile--2 {
         display: flex;
         flex-direction: column; }
+      .player__status__profile:hover {
+        transform: scale(1.05); }
     .player__status__life {
       width: 100%;
       height: 100%;
@@ -348,12 +373,11 @@ body {
     .profile-img {
       height: 36px;
       width: 36px; } }
-  .profile-img--1 {
-    background-image: url(img/Ilmo.png);
-    background-size: cover; }
-  .profile-img--2 {
-    background-image: url(img/Djulian.png);
-    background-size: cover; }
+  .profile-img__back {
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    z-index: 1; }
 
 .life-bar {
   background-color: white;

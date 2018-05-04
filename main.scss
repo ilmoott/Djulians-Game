@@ -2,6 +2,7 @@
 
 body{
     box-sizing: border-box;
+    position: relative;
 }
 
 *,
@@ -18,7 +19,7 @@ body{
     background-image: url(img/welcoming.png);
     background-size: cover;
     color: yellow;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poiret One', cursive;
 
     display: flex;
     flex-direction: column;
@@ -27,7 +28,7 @@ body{
 
     &__text{
         width: 60%;
-        font-size: 20px;
+        font-size: 20vw;
         line-height: 1.5;
         text-align: center;
 
@@ -52,8 +53,13 @@ body{
     
         @media screen and (max-width:650px) and (orientation:landscape) {
             width: 40px;
-            font-size: 20px;
+            font-size: 20px;            
         }
+        
+        &--i{
+            transform: translateX(-40%);
+        }  
+        
     }
 
     &__btn,
@@ -70,6 +76,7 @@ body{
         background-color: yellow;
         text-align: center;
         transition: all .2s;
+        animation: showUp ease-out 3s;
 
         @media screen and (max-width:1100px) {
             width: 20%;
@@ -100,6 +107,31 @@ body{
         &:hover{
             transform: scale(1.1);
         }
+
+    }
+}
+
+@keyframes showUp{
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes showDown{
+    0%{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -140,10 +172,7 @@ body{
             display: flex;
             justify-content: space-around;
             align-items: center;
-
-            &--2{
-                order: 1;
-            }
+            
 
             @media screen and (max-width:400px) {
                 height: 80%;
@@ -157,9 +186,11 @@ body{
             justify-content: space-around;
             align-items: center;
             
+           
 
             &--2{
                 order: 2;
+          
             }
 
             @media screen and (max-width:400px) {
@@ -197,7 +228,12 @@ body{
             justify-content: center;
             position: relative;
             // filter: drop-shadow(0px 20px 10px rgba(0,0,0,.9));
+            background-image: url(img/path4918.png);
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
             
+            transition: all .2s;
 
             &--1{
                 display: flex;
@@ -207,6 +243,10 @@ body{
             &--2{
                 display: flex;
                 flex-direction: column;
+            }
+
+            &:hover{
+                transform: scale(1.05);
             }
 
         }
@@ -322,20 +362,22 @@ body{
         background-image: linear-gradient(to bottom,#364a6b,#1e2838);
         color: lightgray;
 
-        @media screen and (max-width:800px) {
-            font-size: 6px;
-        }
-    
-        @media screen and (max-width:500px) {
-            font-size: 6px;
-        }
+            @media screen and (max-width:800px) {
+                font-size: 6px;
+            }
+        
+            @media screen and (max-width:500px) {
+                font-size: 6px;
+            }
 
-        @media screen and (max-width:830px) and (orientation:landscape) {
-            font-size: 5px;
-        }
-    
-        @media screen and (max-width:650px) and (orientation:landscape) {
-            font-size: 5px;
+            @media screen and (max-width:830px) and (orientation:landscape) {
+                font-size: 5px;
+            }
+        
+            @media screen and (max-width:650px) and (orientation:landscape) {
+                font-size: 5px;
+
+            
         }
 
         &__name{
@@ -472,6 +514,7 @@ body{
     width: 60px;
     border-radius: 100%;
     z-index: 2;
+    
 
     @media screen and (max-width:1100px) {
         height: 55px;
@@ -493,19 +536,25 @@ body{
         width: 36px;
     }
 
+    &__back{
+        height: 70px;
+        width: 70px;
+        border-radius: 100%;
+        z-index: 1;
+    }
+
 /////////////////////////////////////////////
 /////////////////////////////////////
 //IMAGES JUST FOR TESTING PURPOSES
 /////////////////////////////////////
 ///////////////////////////////////////
     &--1{
-        background-image: url(img/Ilmo.png);
-        background-size: cover;
+        // background-image: url(img/Ilmo.png);
+        // background-size: cover;
     }
 
     &--2{
-        background-image: url(img/Djulian.png);
-        background-size: cover;
+       
     }
 
 }

@@ -1,63 +1,59 @@
+// //In this game, I'll split all the activities in small functions, making them
+// compose with each other (functional programming)
+
+
+
+
+
 //////////////////
 //USER INTERFACE INTERACTION
 
-
+var turn = "player1";
 
 
 
 ///////////////////
 //SOFTWARE MECHANICS
 
-//Maybe I could create a object factory function, to generate all heroes
-// without the need to type all properties each time
-let chapoliColorado = {
-    name: "Chapolin Colorado",
-    str: 2,
-    pwr: 1,
-    spd: 1,
-    end: 1
-};
+var player1Hand = [];
+var player2Hand = [];
 
-let naruto = {
-    name: "Naruto",
-    str: 4,
-    pwr: 5,
-    spd: 5,
-    end: 5
-};
 
-let ironMan = {
-    name: "Iron Man",
-    str: 3,
-    pwr: 4,
-    spd: 4,
-    end: 5
-};
 
-let blackPanter = {
-    name: "Black Panter",
-    str: 3,
-    pwr: 1,
-    spd: 3,
-    end: 4
-};
 
-let spiderMan = {
-    name: "Spider Man",
-    str: 4,
-    pwr: 3,
-    spd: 4,
-    end: 4
-};
+//["Name",strength, power,speed,endurance]
+var heroDataBase = [["Captain America", 3, 1, 3, 4], ["Wonder Woman", 4, 2, 5, 5], ["Batman", 2, 2, 2, 3]];
 
-let heroCollection = [chapoliColorado,naruto,ironMan,blackPanter,spiderMan];
+//List of hero objects
+var heroList = [];
 
-// This function will print to the page the hero's name
+//Hero Factory Function
+heroDataBase.forEach(element => {
+        heroList.push({
+            name:element[0],
+            str: element[1],
+            pwr: element[2],
+            spd: element[3],
+            end: element[4]
+        });
+    });
 
-// //In this game, I'll split all the activities in small functions, making them
-// compose with each other (functional programming)
-let printName = (hero)=>{
-    return hero.name
+//DRAWING CARDS
+function drawCard (){
+    var randomIndex = Math.floor(Math.random()*heroList.length);
+    var chosen = heroList[randomIndex];
+
+    //after that, we need to:
+    //1. add it to the game
+    console.log(chosen);
+    //2. remove it from the list || generate a new list
 }
+//JUST MESSING AROUND WITH SOME CODE
+let hero = document.getElementById('p1-h1');
+hero.innerHTML = "Calango Vermelho";
+let list = ["Macaco Azul","Polegar","Cabecinha"];
 
-// var x =document.getElementsByClassName("card__soldier").addEventListener("click",function(){alert("Coco")});
+list.forEach(card=>hero.innerHTML=card);
+///////////////////////////
+
+// drawCard();
